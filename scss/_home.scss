@@ -1,0 +1,35 @@
+.s-inicio {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: url('../assets/gif.png');
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.s-realizacao {
+  width: 100%;
+  height: 12rem;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    li {
+      transition: transform 0.3s;
+      &:not(:first-child) {
+        margin-left: 10.5rem;
+      }
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
