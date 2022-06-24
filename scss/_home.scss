@@ -41,14 +41,13 @@
     font-family: 'Roboto Mono', sans-serif;
     .left {
       width: 100%;
-      max-width: 38.4rem;
+      max-width: 27.4rem;
       position: sticky;
       top: 0rem;
       left: 0;
       height: fit-content;
       padding-top: 14rem;
       padding-bottom: 14rem;
-
       font-family: 'Roboto', sans-serif;
       h2 {
         font-family: 'Roboto';
@@ -61,24 +60,44 @@
         width: fit-content;
       }
       ul {
+        max-width: 22.8rem;
         li {
           &:not(:last-child) {
             margin-bottom: 6.7rem;
           }
+
           a {
+            &:hover {
+              p,
+              span {
+                color: $primary-default;
+              }
+            }
+            &.active {
+              p,
+              span {
+                color: $primary-default;
+              }
+            }
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
             p {
+              transition: color 0.3s;
+
               font-family: 'Roboto';
               font-style: normal;
               font-weight: 900;
-              font-size: 32px;
-              line-height: 30px;
+              font-size: 3.2rem;
+              line-height: 3rem;
             }
             span {
+              transition: color 0.3s;
               font-family: 'Roboto';
               font-style: normal;
               font-weight: 900;
-              font-size: 22px;
-              line-height: 28px;
+              font-size: 2.2rem;
+              line-height: 2.8rem;
               display: block;
             }
           }
@@ -87,14 +106,81 @@
     }
     .rigth {
       width: 100%;
+      position: relative;
+      overflow-y: hidden;
+      margin-bottom: 10rem;
+      &::before {
+        content: '';
+        position: absolute;
+        width: 4px;
+        min-height: 100vh;
+        top: 16rem;
+        bottom: -16rem;
+        border-left: 2px dashed $primary-default;
+      }
       .dia-01,
       .dia-02,
       .dia-03 {
         padding-top: 14rem;
         min-height: 100vh;
-        // position: sticky;
-        // top: 0;
-        // background-color: $background;
+        padding-left: 5rem;
+        .dia {
+          display: flex;
+          flex-direction: column;
+          font-size: 3.2rem;
+          line-height: 3rem;
+          font-family: 'Roboto';
+          font-weight: 900;
+          color: $primary-default;
+          margin-bottom: 3.4rem;
+          span {
+            font-size: 1.8rem;
+            line-height: 2.8rem;
+            color: $primary-default;
+          }
+        }
+        .evento {
+          &:not(:last-child) {
+            margin-bottom: 5rem;
+          }
+          .title {
+            font-family: 'Roboto Mono';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 1.8rem;
+            line-height: 2.6rem;
+            margin-bottom: 0.8rem;
+          }
+          .description {
+            display: flex;
+            align-items: center;
+            .icon {
+              min-width: 72px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+            .text {
+              padding-left: 2rem;
+              border-left: 2px dashed white;
+              font-family: 'Roboto Mono';
+              font-style: normal;
+              font-weight: 400;
+              font-size: 18px;
+              line-height: 24px;
+              color: #c4c4cc;
+
+              ul {
+                margin-top: 2rem;
+                li {
+                  list-style: disc;
+                  margin-left: 2rem;
+                  color: #c4c4cc;
+                }
+              }
+            }
+          }
+        }
       }
     }
   }

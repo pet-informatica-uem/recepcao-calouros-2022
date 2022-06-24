@@ -34,21 +34,21 @@ function pluginsCss() {
 
 gulp.task('plugincss', pluginsCss);
 
-// function gulpJs() {
-//   return gulp
-//     .src('js/scripts/*.js')
-//     .pipe(concat('all.js'))
-//     .pipe(
-//       babel({
-//         presets: ['@babel/env'],
-//       })
-//     )
-//     .pipe(uglify())
-//     .pipe(gulp.dest('js/'))
-//     .pipe(browserSync.stream());
-// }
+function gulpJs() {
+  return gulp
+    .src('js/scripts/*.js')
+    .pipe(concat('all.js'))
+    .pipe(
+      babel({
+        presets: ['@babel/env'],
+      })
+    )
+    .pipe(uglify())
+    .pipe(gulp.dest('js/'))
+    .pipe(browserSync.stream());
+}
 
-// gulp.task('alljs', gulpJs);
+gulp.task('alljs', gulpJs);
 
 // function pluginsJs() {
 //   return gulp
@@ -74,7 +74,7 @@ function watch() {
   gulp.watch('scss/*.scss', compilaSass);
   // gulp.watch('css/lib/*.css', pluginsCss);
   gulp.watch('*.html').on('change', browserSync.reload);
-  // gulp.watch('js/scripts/*.js', gulpJs);
+  gulp.watch('js/scripts/*.js', gulpJs);
   // gulp.watch('js/lib/*.js', pluginsJs);
 }
 
@@ -85,9 +85,9 @@ gulp.task(
   gulp.parallel(
     'watch',
     'browser-sync',
-    'sass'
+    'sass',
     // 'plugincss',
-    // 'alljs'
+    'alljs'
     // 'pluginjs'
   )
 );
