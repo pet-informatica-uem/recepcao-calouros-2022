@@ -31,4 +31,20 @@ header {
       }
     }
   }
+  @media (max-width: 560px) {
+    height: 7rem;
+    .container {
+      ul {
+        font-size: 1.4rem;
+        max-width: 32rem;
+        margin: 0 auto;
+        justify-content: space-between;
+        li {
+          &:not(:first-child) {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
 }
