@@ -74,6 +74,7 @@ function watch() {
   gulp.watch('scss/*.scss', compilaSass);
   // gulp.watch('css/lib/*.css', pluginsCss);
   gulp.watch('*.html').on('change', browserSync.reload);
+  gulp.watch('g/*.html').on('change', browserSync.reload);
   gulp.watch('js/scripts/*.js', gulpJs);
   // gulp.watch('js/lib/*.js', pluginsJs);
 }
