@@ -1,0 +1,1 @@
+document.getElementById("hotspot").addEventListener("mouseenter", () => alert('TODO: _NOME7.html'));
