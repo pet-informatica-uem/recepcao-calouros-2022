@@ -6,6 +6,7 @@
   min-height: 100vh;
   background: url('../assets/matrix.gif') no-repeat center center;
   background-size: cover;
+  overflow: hidden;
   .container {
     display: flex;
     align-items: center;
@@ -157,7 +158,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(calc(-100% - 9.5rem));
   }
 }
 
